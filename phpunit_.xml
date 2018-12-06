@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit backupGlobals="false"
+         backupStaticAttributes="false"
+         bootstrap="vendor/autoload.php"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="false"
+         stopOnFailure="false">
+    <testsuites>
+        <testsuite name="Unit">
+            <directory suffix="Test.php">./tests/Unit</directory>
+        </testsuite>
+        <testsuite name="Feature">
+            <directory suffix="Test.php">./tests/Feature</directory>
+        </testsuite>
+
+		<!--testsuite name="command">
+			<file>./vendor/aimeos/aimeos-laravel/tests/Command/SetupCommandTest.php</file>
+			<file>./vendor/aimeos/aimeos-laravel/tests/Command/CacheCommandTest.php</file>
+			<file>./vendor/aimeos/aimeos-laravel/tests/Command/JobsCommandTest.php</file>
+			<file>./vendor/aimeos/aimeos-laravel/tests/Command/AccountCommandTest.php</file>
+		</testsuite>
+		<testsuite name="base">
+			<directory>./vendor/aimeos/aimeos-laravel/tests/Base</directory>
+		</testsuite>
+		<testsuite name="controller">
+			<directory>./vendor/aimeos/aimeos-laravel/tests/Controller</directory>
+		</testsuite>
+		<testsuite name="helpers">
+			<file>./vendor/aimeos/aimeos-laravel/tests/HelpersTest.php</file>
+		</testsuite>		
+        <testsuite name="Base">
+            <directory suffix="Test.php">./vendor/aimeos/aimeos-laravel/tests/Base</directory>
+        </testsuite>
+        <testsuite name="Command">
+            <directory suffix="Test.php">./vendor/aimeos/aimeos-laravel/tests/Command</directory>
+        </testsuite>
+        <testsuite name="Controller">
+            <directory suffix="Test.php">./vendor/aimeos/aimeos-laravel/tests/Controller</directory>
+        </testsuite-->
+    </testsuites>
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">./app</directory>
+        </whitelist>
+    </filter>
+    <php>
+        <env name="APP_ENV" value="testing"/>
+        <env name="BCRYPT_ROUNDS" value="4"/>
+        <env name="CACHE_DRIVER" value="array"/>
+        <env name="SESSION_DRIVER" value="array"/>
+        <env name="QUEUE_DRIVER" value="sync"/>
+        <env name="MAIL_DRIVER" value="array"/>
+    </php>
+</phpunit>

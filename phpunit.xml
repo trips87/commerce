@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<phpunit backupGlobals="false"
+    backupStaticAttributes="false"
+    bootstrap="vendor/autoload.php"
+    convertErrorsToExceptions="true"
+    convertNoticesToExceptions="true"
+    convertWarningsToExceptions="true"
+    processIsolation="false"
+    stopOnFailure="false">
+
+    <php>
+        <env name="APP_ENV" value="testing"/>
+        <env name="CACHE_DRIVER" value="array"/>
+        <env name="SESSION_DRIVER" value="array"/>
+    </php>
+
+	<testsuites>
+		<testsuite name="command">
+			<file>./vendor/aimeos/aimeos-laravel/tests/Command/SetupCommandTest.php</file>
+			<file>./vendor/aimeos/aimeos-laravel/tests/Command/CacheCommandTest.php</file>
+			<file>./vendor/aimeos/aimeos-laravel/tests/Command/JobsCommandTest.php</file>
+			<file>./vendor/aimeos/aimeos-laravel/tests/Command/AccountCommandTest.php</file>
+		</testsuite>
+		<testsuite name="base">
+			<directory>./vendor/aimeos/aimeos-laravel/tests/Base</directory>
+		</testsuite>
+		<testsuite name="controller">
+			<directory>./vendor/aimeos/aimeos-laravel/tests/Controller</directory>
+		</testsuite>
+		<testsuite name="helpers">
+			<file>./vendor/aimeos/aimeos-laravel/tests/HelpersTest.php</file>
+		</testsuite>
+	</testsuites>
+
+	<filter>
+		<whitelist>
+			<directory suffix=".php">./src/</directory>
+			<exclude>
+				<directory>./vendor/aimeos/aimeos-laravel/src/database/migrations/</directory>
+				<directory>./vendor/aimeos/aimeos-laravel/src/config/</directory>
+				<directory>./vendor/aimeos/aimeos-laravel/src/views/</directory>
+			</exclude>
+		</whitelist>
+	</filter>
+</phpunit>

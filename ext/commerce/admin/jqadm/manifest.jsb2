@@ -1,0 +1,22 @@
+{
+	"projectName": "commerce",
+	"licenseText": "proprietary",
+	"pkgs": [{
+		"name": "commerce CSS",
+		"file": "commerce.css",
+		"isDebug": true,
+		"fileIncludes": [{
+			"text": "custom.css",
+			"path": "themes/"
+		}]
+	}, {
+		"name": "commerce JS",
+		"file": "commerce.js",
+		"isDebug": true,
+		"fileIncludes": [{
+			"text": "custom.js",
+			"path": "themes/"
+		}]
+	}],
+	"resources" : []
+}
